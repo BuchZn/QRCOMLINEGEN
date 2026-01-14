@@ -29,9 +29,14 @@ def qr_gen():
     #path = input()
     print("Please enter Name for the QR-Code:")
     name = input()
+    print("Please enter Size")
+    scale = input()
+
 
     qr_code = segno.make_qr(url)
-    qr_code.save(name + ".png")
+    qr_code.save(
+                name + ".png",
+                scale = scale)
 
     print("Do you want to process another Link ? (y/n):")
     user_input = input()
@@ -40,8 +45,6 @@ def qr_gen():
         qr_gen()
     else:
         sys.exit()
-
-
 
 if __name__ == '__main__':
     sys.exit(main())
